@@ -64,7 +64,7 @@ them around as you wish) or `None` if you do not want to save the given file.
 
 Additionally the ILIAS synchronizer allows you to define a *crawl filter*. This
 filter also receives the computed path as the input, but is only called or
-*directoties*. If you return `True`, the directory will be crawled and
+*directories*. If you return `True`, the directory will be crawled and
 searched. If you return `False` the directory will be ignored and nothing in it
 will be passed to the transformer.
 
@@ -84,14 +84,14 @@ ships with a few powerful building blocks:
 And PFERD also offers a few combinator functions:
 
 * **`keep`**  
-  `keep` just returns the input path unchanged. It can be very useful as the
+  Just returns the input path unchanged. It can be very useful as the
   last argument in an `attempt` call, to leave everything not matching a rule
   unchanged.
 * **`optionally(transformer)`**  
   Wraps a given transformer and returns its result if it is not `None`.
   Otherwise returns the input path unchanged.
 * **`do(transformers)`**  
-  `do` accepts a series of transformers and applies them in the given order to
+  Accepts a series of transformers and applies them in the given order to
   the result of the previous one. If any transformer returns `None`, do
   short-circuits and also returns `None`. This can be used to perform multiple
   renames in a row:
@@ -106,7 +106,7 @@ And PFERD also offers a few combinator functions:
   ),
   ```
 * **`attempt(transformers)`**  
-  `attempt` applies the passed transformers in the given order until it finds
+  Applies the passed transformers in the given order until it finds
   one that does not return `None`. If it does not find any, it returns `None`.
   This can be used to give a list of possible transformations and it will
   automatically pick the first one that fits:
